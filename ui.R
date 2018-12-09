@@ -25,8 +25,7 @@ navbarPage(
                sidebarLayout(
         # Sidebar with a slider and selection inputs
         sidebarPanel(
-          selectInput("selection", "Choose a Coffee Shop:", choices = c("coffee","starbucks")),
-          actionButton("update", "Change"),
+          selectInput("selection", "Choose a Coffee Shop:", choices = c("coffee","starbucks", "dunkin", "shiru")),
           hr(),
           sliderInput("max",
                       "Maximum Number of Words:",
