@@ -22,6 +22,5 @@ navbarPage(
     tabPanel("xx"),
     tabPanel("xx")
     )
-  ),
-  tabPanel("Tutorial")
+  )
 )
