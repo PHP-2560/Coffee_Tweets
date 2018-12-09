@@ -38,7 +38,7 @@ navbarPage(
         )
       )
     )),
-    tabPanel("xx"),
+    tabPanel("Bar Graph"),
     tabPanel("xx")
     )
   )
