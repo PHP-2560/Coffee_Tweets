@@ -16,6 +16,19 @@ function(input, output){
   get_tweets("shiru")
   clean_tweets("shiru_tweets.csv")
   
+  output$table1 <- DT::renderDataTable({
+    DT::datatable(read.csv("coffee_tweets.csv")[1:2])
+  })
+  output$table2 <- DT::renderDataTable({
+    DT::datatable(read.csv("starbucks_tweets.csv")[1:2])
+  })
+  output$table3 <- DT::renderDataTable({
+    DT::datatable(read.csv("dunkin_tweets.csv")[1:2])
+  })
+  output$table4 <- DT::renderDataTable({
+    DT::datatable(read.csv("shiru_tweets.csv")[1:2])
+  })
+  
   output$plot <- renderPlot({
     if (input$selection == "coffee") {
       make_wordcloud("clean_coffee_tweets.csv")
@@ -30,4 +43,5 @@ function(input, output){
       make_wordcloud("clean_shiru_tweets.csv")
     }
   })
+  
 }
