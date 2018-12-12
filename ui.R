@@ -9,8 +9,7 @@ navbarPage(
   fluid = TRUE,
   "Sentiment Analysis of Coffee Tweets",
   id ="main", 
-  tabPanel("About", p("What can this app be used for?"),
-           includeMarkdown("Markdown.Rmd")
+  tabPanel("About", includeMarkdown("Markdown.Rmd")
   ),
   tabPanel("Table",
     sidebarLayout(
@@ -45,59 +44,60 @@ navbarPage(
   ),
   tabPanel("Graphs",  tabsetPanel(
     tabPanel("Word Cloud",
-             fluidPage(
-      # Application title
-               titlePanel("Word Cloud"),
-               sidebarLayout(
-                 sidebarPanel(
-                   selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-                   hr(),
-                   # Sidebar with a slider and selection inputs
-                   sliderInput("num",
-                               "Number of Words:",
-                               min = 1,  max = 100,  value = 50)
-                 ),
-                 #Show Word Cloud
-                 mainPanel(
-                   plotOutput("plot1")
-                 )
-               )
-             )),
+      fluidPage(
+        titlePanel("Word Cloud"),
+          sidebarLayout(
+            sidebarPanel(
+              selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+            hr(),
+            # Sidebar with a slider and selection inputs
+            sliderInput("num",
+              "Number of Words:",
+              min = 1,  max = 100,  value = 50)
+            ),
+            #Show Word Cloud
+            mainPanel(
+              plotOutput("plot1")
+            )
+          )
+        )
+      ),
     tabPanel("Bar Graph",
-             fluidPage(
+      fluidPage(
       #Application title
-               titlePanel("Bar Graph"),
-               sidebarLayout(
-                 #Sidebar with a slide and selection inputs
-                 sidebarPanel(
-                   selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-                   hr()
-                 ),
-                 # Show Bar Plot
-                 mainPanel (
-                   plotOutput("plot2")
-                 )
-               )
-             )),
+         titlePanel("Bar Graph"),
+           sidebarLayout(
+             #Sidebar with a slide and selection inputs
+              sidebarPanel(
+                selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                hr()
+              ),
+              # Show Bar Plot
+              mainPanel (
+                plotOutput("plot2")
+              )
+            )
+          )
+      ),
     tabPanel("Emotions Category Graph",
-             fluidPage(
-               #Application title
-               titlePanel("Emotions Graph"),
-               sidebarLayout(
-                 #Sidebar with a slide and selection inputs
-                 sidebarPanel(
-                   selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-                   hr()
-                 ),
-                 # Show Bar Plot
-                 mainPanel (
-                   plotOutput("plot3")
-                 )
-               )
-             )
+       fluidPage(
+         #Application title
+         titlePanel("Emotions Graph"),
+          sidebarLayout(
+            #Sidebar with a slide and selection inputs
+            sidebarPanel(
+              selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+              hr()
+              ),
+            # Show Bar Plot
+              mainPanel (
+                plotOutput("plot3")
+              )
+            )
+          )
+        )
+      )
     )
-  )
-  )
 )
 
   
