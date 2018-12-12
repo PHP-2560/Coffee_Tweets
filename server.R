@@ -46,18 +46,18 @@ function(input, output){
   })
   
   output$plot2 <- renderPlot({
-    if (input$selection2 == "coffee") {
+    if (input$word == "coffee"){
       make_bar_graph("clean_coffee_tweets.csv")
-    }
-    if (input$selection2 == "starbucks") {
+    } else if (input$word == "starbucks") {
       make_bar_graph("clean_starbucks_tweets.csv")
-    }
-    if (input$selection2 == "dunkin") {
-      make_bar_graph("clean_dunkin_tweets.csv")
-    }
-    if (input$selection2 == "shiru") {
+    } else if (input$word == "dunkin") {
+      make_bar_graph("clean_dunkin_tweets.csv") 
+    } else {
       make_bar_graph("clean_shiru_tweets.csv")
     }
   })
+  
+      
+  
   
 }

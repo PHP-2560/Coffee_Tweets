@@ -75,7 +75,7 @@ navbarPage(
                sidebarLayout(
                  #Sidebar with a slide and selection inputs
                  sidebarPanel(
-                   selectInput("selection2", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                   selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
                    hr()
                  ),
                  # Show Bar Plot
