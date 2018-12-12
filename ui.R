@@ -88,7 +88,7 @@ navbarPage(
           sidebarLayout(
             #Sidebar with a slide and selection inputs
             sidebarPanel(
-              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Emotions Sentiment Graph displayed to the right will display the proportion of words that are positive vs. negative for the tweets found capturing the word you chose.'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Emotions Sentiment Graph displayed to the right will display both word counts that contribute to each sentiment by viewing the top 10 words for each sentiment. Some sentiments have more than 10 words, due to their being a tie in the amount of words per sentiment.'),
               hr(),
               selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
