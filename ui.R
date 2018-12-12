@@ -48,7 +48,7 @@ navbarPage(
         titlePanel("Word Cloud"),
           sidebarLayout(
             sidebarPanel(
-              helpText('WORD CLOUD EXPLANATION'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The WordCloud displayed to the right will display the most frequent words corresponding to those specific tweets. This app also allows you to choose how many words you would like shown in the word cloud.'),
               hr(),
               selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
             # Sidebar with a slider and selection inputs
@@ -70,7 +70,7 @@ navbarPage(
            sidebarLayout(
              #Sidebar with a slide and selection inputs
               sidebarPanel(
-                helpText('BAR GRAPH EXPLANATION'),
+                helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Bar Graph displayed to the right will display the proportion of words that are positive vs. negative for the tweets found capturing the word you chose.'),
                 hr(),
                 selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
@@ -88,7 +88,7 @@ navbarPage(
           sidebarLayout(
             #Sidebar with a slide and selection inputs
             sidebarPanel(
-              helpText('EMOTIONS GRAPH EXPLANATION'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Emotions Sentiment Graph displayed to the right will display the proportion of words that are positive vs. negative for the tweets found capturing the word you chose.'),
               hr(),
               selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
