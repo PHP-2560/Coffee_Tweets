@@ -48,8 +48,9 @@ navbarPage(
         titlePanel("Word Cloud"),
           sidebarLayout(
             sidebarPanel(
+              helpText('WORD CLOUD EXPLANATION'),
+              hr(),
               selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-            hr(),
             # Sidebar with a slider and selection inputs
             sliderInput("num",
               "Number of Words:",
@@ -69,8 +70,9 @@ navbarPage(
            sidebarLayout(
              #Sidebar with a slide and selection inputs
               sidebarPanel(
-                selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-                hr()
+                helpText('BAR GRAPH EXPLANATION'),
+                hr(),
+                selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
               # Show Bar Plot
               mainPanel (
@@ -86,8 +88,9 @@ navbarPage(
           sidebarLayout(
             #Sidebar with a slide and selection inputs
             sidebarPanel(
-              selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-              hr()
+              helpText('EMOTIONS GRAPH EXPLANATION'),
+              hr(),
+              selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
             # Show Bar Plot
               mainPanel (
