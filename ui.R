@@ -80,7 +80,7 @@ navbarPage(
                  ),
                  # Show Bar Plot
                  mainPanel (
-                   plotOutput("plot")
+                   plotOutput("plot2")
                  )
                )
              )),
