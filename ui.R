@@ -54,12 +54,12 @@ navbarPage(
                titlePanel("Word Cloud"),
                sidebarLayout(
                  sidebarPanel(
-                   selectInput("selection1", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                   selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
                    hr(),
                    # Sidebar with a slider and selection inputs
-                   sliderInput("max",
-                               "Maximum Number of Words:",
-                               min = 1,  max = 50,  value = 50)
+                   sliderInput("num",
+                               "Number of Words:",
+                               min = 1,  max = 100,  value = 50)
                  ),
                  #Show Word Cloud
                  mainPanel(

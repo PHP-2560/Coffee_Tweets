@@ -1,8 +1,10 @@
-function(input, output){
+function(input, output, session){
   
   reactive({
-    input$selection1
-    input$selection2
+    input$num
+    input$selection
+    input$word
+    inout$item
   })
   
   get_tweets("coffee")
@@ -18,30 +20,30 @@ function(input, output){
   clean_tweets("shiru_tweets.csv")
   
   output$table1 <- DT::renderDataTable({
-    DT::datatable(read.csv("coffee_tweets.csv")[1:2])
+    DT::datatable(read.csv("coffee_tweets.csv")[2:2])
   })
   output$table2 <- DT::renderDataTable({
-    DT::datatable(read.csv("starbucks_tweets.csv")[1:2])
+    DT::datatable(read.csv("starbucks_tweets.csv")[2:2])
   })
   output$table3 <- DT::renderDataTable({
-    DT::datatable(read.csv("dunkin_tweets.csv")[1:2])
+    DT::datatable(read.csv("dunkin_tweets.csv")[2:2])
   })
   output$table4 <- DT::renderDataTable({
-    DT::datatable(read.csv("shiru_tweets.csv")[1:2])
+    DT::datatable(read.csv("shiru_tweets.csv")[2:2])
   })
   
   output$plot1 <- renderPlot({
-    if (input$selection1 == "coffee") {
-      make_wordcloud("clean_coffee_tweets.csv")
+    if (input$selection == "coffee") {
+      make_wordcloud("clean_coffee_tweets.csv", input$num)
     }
-    if (input$selection1 == "starbucks") {
-      make_wordcloud("clean_starbucks_tweets.csv")
+    else if (input$selection == "starbucks") {
+      make_wordcloud("clean_starbucks_tweets.csv", input$num)
     }
-    if (input$selection1 == "dunkin") {
-      make_wordcloud("clean_dunkin_tweets.csv")
+    else if (input$selection == "dunkin") {
+      make_wordcloud("clean_dunkin_tweets.csv", input$num)
     }
-    if (input$selection1 == "shiru") {
-      make_wordcloud("clean_shiru_tweets.csv")
+    else if (input$selection == "shiru") {
+      make_wordcloud("clean_shiru_tweets.csv", input$num)
     }
   })
   
@@ -52,7 +54,7 @@ function(input, output){
       make_bar_graph("clean_starbucks_tweets.csv")
     } else if (input$word == "dunkin") {
       make_bar_graph("clean_dunkin_tweets.csv") 
-    } else {
+    } else if (input$word == "shiru") {
       make_bar_graph("clean_shiru_tweets.csv")
     }
   })
@@ -65,7 +67,7 @@ function(input, output){
       make_cat_graph("clean_starbucks_tweets.csv")
     } else if (input$item == "dunkin") {
       make_cat_graph("clean_dunkin_tweets.csv") 
-    } else {
+    } else if (input$item == "shiru") {
       make_cat_graph("clean_shiru_tweets.csv")
     }
   })
