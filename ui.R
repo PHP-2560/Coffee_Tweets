@@ -20,19 +20,19 @@ navbarPage(
     sidebarLayout(
       sidebarPanel(
         conditionalPanel(
-          'input.dataset === "coffee"',
+          'input.dataset == "coffee"',
           helpText('Tweets including "coffee"')
                ),
         conditionalPanel(
-          'input.dataset === "starbucks"',
+          'input.dataset == "starbucks"',
           helpText('Tweets including "starbucks"')
         ),
         conditionalPanel(
-          'input.dataset === "dunkin"',
+          'input.dataset == "dunkin"',
           helpText('Tweets including "dunkin"')
         ),
         conditionalPanel(
-          'input.dataset === "shiru"',
+          'input.dataset == "shiru"',
           helpText('Tweets including "shiru"')
         )
       ),
@@ -55,7 +55,7 @@ navbarPage(
                sidebarLayout(
         # Sidebar with a slider and selection inputs
         sidebarPanel(
-          selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+          selectInput("selection1", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
           hr(),
           sliderInput("max",
                       "Maximum Number of Words:",
@@ -64,7 +64,7 @@ navbarPage(
         
         # Show Word Cloud
         mainPanel(
-          plotOutput("plot")
+          plotOutput("plot1")
         )
       )
     )),
@@ -75,12 +75,12 @@ navbarPage(
                sidebarLayout(
                  #Sidebar with a slide and selection inputs
                  sidebarPanel(
-                   selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                   selectInput("selection2", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
                    hr()
                  ),
                  # Show Bar Plot
                  mainPanel (
-                   plotOutput("plot")
+                   plotOutput("plot2")
                  )
                )
              )),

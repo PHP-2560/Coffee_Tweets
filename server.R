@@ -1,7 +1,8 @@
 function(input, output){
   
   reactive({
-    input$selection
+    input$selection1
+    input$selection2
   })
   
   get_tweets("coffee")
@@ -29,17 +30,32 @@ function(input, output){
     DT::datatable(read.csv("shiru_tweets.csv")[1:2])
   })
   
-  output$plot <- renderPlot({
-    if (input$selection == "coffee") {
+  output$plot1 <- renderPlot({
+    if (input$selection1 == "coffee") {
       make_wordcloud("clean_coffee_tweets.csv")
     }
-    if (input$selection == "starbucks") {
+    if (input$selection1 == "starbucks") {
       make_wordcloud("clean_starbucks_tweets.csv")
     }
-    if (input$selection == "dunkin") {
+    if (input$selection1 == "dunkin") {
       make_wordcloud("clean_dunkin_tweets.csv")
     }
-    if (input$selection == "shiru") {
+    if (input$selection1 == "shiru") {
+      make_wordcloud("clean_shiru_tweets.csv")
+    }
+  })
+  
+  output$plot2 <- renderPlot({
+    if (input$selection2 == "coffee") {
+      make_wordcloud("clean_coffee_tweets.csv")
+    }
+    if (input$selection2 == "starbucks") {
+      make_wordcloud("clean_starbucks_tweets.csv")
+    }
+    if (input$selection2 == "dunkin") {
+      make_wordcloud("clean_dunkin_tweets.csv")
+    }
+    if (input$selection2 == "shiru") {
       make_wordcloud("clean_shiru_tweets.csv")
     }
   })
