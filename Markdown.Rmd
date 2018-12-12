@@ -1,6 +1,6 @@
 ---
 title: "Getting Sentimental About Coffee"
-author: "Erin Bugbee"
+author: "Erin Bugbee, Sarah Fringer, Amy Liu"
 date: "12/12/2018"
 output: html_document
 ---
