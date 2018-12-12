@@ -57,6 +57,18 @@ function(input, output){
     }
   })
   
+  
+  output$plot3 <- renderPlot({
+    if (input$item == "coffee"){
+      make_cat_graph("clean_coffee_tweets.csv")
+    } else if (input$item == "starbucks") {
+      make_cat_graph("clean_starbucks_tweets.csv")
+    } else if (input$item == "dunkin") {
+      make_cat_graph("clean_dunkin_tweets.csv") 
+    } else {
+      make_cat_graph("clean_shiru_tweets.csv")
+    }
+  })
       
   
   

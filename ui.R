@@ -48,29 +48,28 @@ navbarPage(
     )
   ),
   tabPanel("Graphs",  tabsetPanel(
-    tabPanel("Word Cloud", 
+    tabPanel("Word Cloud",
              fluidPage(
       # Application title
                titlePanel("Word Cloud"),
                sidebarLayout(
-        # Sidebar with a slider and selection inputs
-        sidebarPanel(
-          selectInput("selection1", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
-          hr(),
-          sliderInput("max",
-                      "Maximum Number of Words:",
-                      min = 1,  max = 50,  value = 50)
-        ),
-        
-        # Show Word Cloud
-        mainPanel(
-          plotOutput("plot1")
-        )
-      )
-    )),
+                 sidebarPanel(
+                   selectInput("selection1", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                   hr(),
+                   # Sidebar with a slider and selection inputs
+                   sliderInput("max",
+                               "Maximum Number of Words:",
+                               min = 1,  max = 50,  value = 50)
+                 ),
+                 #Show Word Cloud
+                 mainPanel(
+                   plotOutput("plot1")
+                 )
+               )
+             )),
     tabPanel("Bar Graph",
              fluidPage(
-               #Application title
+      #Application title
                titlePanel("Bar Graph"),
                sidebarLayout(
                  #Sidebar with a slide and selection inputs
@@ -84,7 +83,25 @@ navbarPage(
                  )
                )
              )),
-    tabPanel("xx")
+    tabPanel("Emotions Category Graph",
+             fluidPage(
+               #Application title
+               titlePanel("Emotions Graph"),
+               sidebarLayout(
+                 #Sidebar with a slide and selection inputs
+                 sidebarPanel(
+                   selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
+                   hr()
+                 ),
+                 # Show Bar Plot
+                 mainPanel (
+                   plotOutput("plot3")
+                 )
+               )
+             )
     )
   )
+  )
 )
+
+  
