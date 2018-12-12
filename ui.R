@@ -16,6 +16,7 @@ navbarPage(
            p("*"),
            
            p("*")),
+  img(src='coffee1.jpg', align = "right"),
   tabPanel("Table",
     sidebarLayout(
       sidebarPanel(
