@@ -1,0 +1,20 @@
+---
+title: "Getting Sentimental About Coffee"
+author: "Erin Bugbee"
+date: "12/12/2018"
+output: html_document
+---
+
+# Getting Sentimental About Coffee
+
+This application can be used to compare the sentiments of tweets about different words related to coffee, including coffee shops.
+
+## Use this App to:
+
+* View word clouds 
+* Examine the overall sentiments of tweets
+* Explore the most common sentiments of the tweets and the words that contribute to them
+
+<center>
+![](www/coffee1.jpg)
+</center>

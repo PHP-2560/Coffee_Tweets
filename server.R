@@ -71,7 +71,5 @@ function(input, output, session){
       make_cat_graph("clean_shiru_tweets.csv")
     }
   })
-      
-  
   
 }
