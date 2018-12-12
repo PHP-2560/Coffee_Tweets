@@ -47,30 +47,15 @@ function(input, output){
   
   output$plot2 <- renderPlot({
     if (input$selection2 == "coffee") {
-      make_wordcloud("clean_coffee_tweets.csv")
-    }
-    if (input$selection2 == "starbucks") {
-      make_wordcloud("clean_starbucks_tweets.csv")
-    }
-    if (input$selection2 == "dunkin") {
-      make_wordcloud("clean_dunkin_tweets.csv")
-    }
-    if (input$selection2 == "shiru") {
-      make_wordcloud("clean_shiru_tweets.csv")
-    }
-  })
-  
-  output$plot2 <- renderPlot({
-    if (input$selection == "coffee") {
       make_bar_graph("clean_coffee_tweets.csv")
     }
-    if (input$selection == "starbucks") {
+    if (input$selection2 == "starbucks") {
       make_bar_graph("clean_starbucks_tweets.csv")
     }
-    if (input$selection == "dunkin") {
+    if (input$selection2 == "dunkin") {
       make_bar_graph("clean_dunkin_tweets.csv")
     }
-    if (input$selection == "shiru") {
+    if (input$selection2 == "shiru") {
       make_bar_graph("clean_shiru_tweets.csv")
     }
   })
