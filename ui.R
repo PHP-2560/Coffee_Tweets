@@ -2,6 +2,7 @@ source("check_packages.R")
 check_packages(c("shiny", "shinythemes", "ggplot2", "devtools", "twitteR", "base64enc", "httr", "DT", "rmarkdown"))
 install_github("PHP-2560/r-package-aes/coffee")
 library(coffee)
+library(wordcloud2)
 
 navbarPage(
   theme = shinytheme("cosmo"),
@@ -58,7 +59,7 @@ navbarPage(
             ),
             #Show Word Cloud
             mainPanel(
-              plotOutput("plot1")
+              wordcloud2Output("plot1")
             )
           )
         )
