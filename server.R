@@ -32,7 +32,7 @@ function(input, output, session){
     DT::datatable(read.csv("shiru_tweets.csv")[2:2])
   })
   
-  output$plot1 <- renderPlot({
+  output$plot1 <- renderWordcloud2({
     if (input$selection == "coffee") {
       make_wordcloud("clean_coffee_tweets.csv", input$num)
     }
