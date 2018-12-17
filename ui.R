@@ -49,7 +49,7 @@ navbarPage(
         titlePanel("Word Cloud"),
           sidebarLayout(
             sidebarPanel(
-              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Word Cloud displayed to the right will display the most frequent words corresponding to those specific tweets. This app also allows you to choose how many words you would like shown in the word cloud.'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Word Cloud displays the most frequent words occurring within those specific tweets. You can also choose how many words you would like shown in the word cloud.'),
               hr(),
               selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
             # Sidebar with a slider and selection inputs
@@ -71,7 +71,7 @@ navbarPage(
            sidebarLayout(
              #Sidebar with a slide and selection inputs
               sidebarPanel(
-                helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Bar Graph displayed to the right displays the number of words that are positive and negative for the tweets found capturing the word.'),
+                helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Bar Graph displays the number of words that are positive and negative for the tweets found capturing the word.'),
                 hr(),
                 selectInput("word", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               ),
@@ -89,7 +89,7 @@ navbarPage(
           sidebarLayout(
             #Sidebar with a slide and selection inputs
             sidebarPanel(
-              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Emotions Sentiment Graph displayed to the right will display the top sentiments expressed by the tweets, and the frequency of the words that contribute the most to each sentiment.'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Emotions Sentiment Graph displays the top sentiments expressed by the tweets, and the frequency of the words that contribute most to each sentiment.'),
               hr(),
               selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               
