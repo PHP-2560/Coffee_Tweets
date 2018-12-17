@@ -12,9 +12,10 @@ This application can be used to compare the sentiments of tweets including diffe
 
 ## Use this App to:
 
-* View word clouds 
-* Examine the overall sentiments of tweets, positive or negative
-* Explore the most common sentiments of the tweets and the words that contribute to them
+* View original tweets
+* Explore word clouds 
+* Observe the overall sentiments of tweets, positive or negative
+* Examine the most common sentiments of the tweets and the words that contribute to them
 
 Overall, this app can be used to learn about the sentiments people have and the words they associate with coffee and specific coffee shops.
 
