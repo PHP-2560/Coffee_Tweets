@@ -3,7 +3,7 @@ check_packages(c("shiny", "shinythemes", "ggplot2", "devtools", "twitteR", "base
 install_github("PHP-2560/final-project-coffee/coffee")
 library(coffee)
 
-ui = navbarPage(
+ui <- navbarPage(
   theme = shinytheme("cosmo"),
   collapsible = FALSE,
   fluid = TRUE,
@@ -105,7 +105,7 @@ ui = navbarPage(
   )
 )
 
-server = function(input, output, session){
+server <- function(input, output, session){
   
   reactive({
     input$num
