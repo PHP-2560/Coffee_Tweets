@@ -1,8 +1,7 @@
 source("check_packages.R")
-check_packages(c("shiny", "shinythemes", "ggplot2", "devtools", "twitteR", "base64enc", "httr", "DT", "rmarkdown"))
+check_packages(c("shiny", "shinythemes", "ggplot2", "devtools", "twitteR", "base64enc", "httr", "DT", "rmarkdown", "wordcloud2"))
 install_github("PHP-2560/r-package-aes/coffee")
 library(coffee)
-library(wordcloud2)
 
 navbarPage(
   theme = shinytheme("cosmo"),
@@ -33,6 +32,7 @@ navbarPage(
         )
       ),
       mainPanel(
+        #Tabs for data tables of original tweets
         tabsetPanel(
           id = 'dataset',
           tabPanel("coffee", DT::dataTableOutput("table1")),
@@ -55,7 +55,7 @@ navbarPage(
             # Sidebar with a slider and selection inputs
             sliderInput("num",
               "Number of Words:",
-              min = 1,  max = 100,  value = 50)
+              min = 0,  max = 100,  value = 0)
             ),
             #Show Word Cloud
             mainPanel(
@@ -94,7 +94,7 @@ navbarPage(
               selectInput("item", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru"))
               
               ),
-            # Show Bar Plot
+            # Show Emotions Plot
               mainPanel (
                 plotOutput("plot3")
               )

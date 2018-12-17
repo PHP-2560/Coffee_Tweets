@@ -7,18 +7,23 @@ function(input, output, session){
     inout$item
   })
   
+  #Pre load the tweets for "coffee"
   get_tweets("coffee")
   clean_tweets("coffee_tweets.csv")
 
+  #Pre load the tweets for "starbucks"
   get_tweets("starbucks")
   clean_tweets("starbucks_tweets.csv")
 
+  #Pre load the tweets for "dunkin"
   get_tweets("dunkin")
   clean_tweets("dunkin_tweets.csv")
 
+  #Pre load the tweets for "shiru"
   get_tweets("shiru")
   clean_tweets("shiru_tweets.csv")
   
+  #Load the tweets in data tables
   output$table1 <- DT::renderDataTable({
     DT::datatable(read.csv("coffee_tweets.csv")[2:2])
   })
@@ -32,6 +37,7 @@ function(input, output, session){
     DT::datatable(read.csv("shiru_tweets.csv")[2:2])
   })
   
+  #Create the word clouds
   output$plot1 <- renderWordcloud2({
     if (input$selection == "coffee") {
       make_wordcloud("clean_coffee_tweets.csv", input$num)
@@ -47,6 +53,7 @@ function(input, output, session){
     }
   })
   
+  #Create the bar graphs
   output$plot2 <- renderPlot({
     if (input$word == "coffee"){
       make_bar_graph("clean_coffee_tweets.csv")
@@ -59,7 +66,7 @@ function(input, output, session){
     }
   })
   
-  
+  #Create the sentiment category graphs
   output$plot3 <- renderPlot({
     if (input$item == "coffee"){
       make_cat_graph("clean_coffee_tweets.csv")
