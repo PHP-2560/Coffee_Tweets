@@ -55,7 +55,7 @@ navbarPage(
             # Sidebar with a slider and selection inputs
             sliderInput("num",
               "Number of Words:",
-              min = 0,  max = 100,  value = 0)
+              min = 0,  max = 100,  value = 50)
             ),
             #Show Word Cloud
             mainPanel(
