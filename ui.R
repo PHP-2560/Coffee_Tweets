@@ -1,6 +1,6 @@
 source("check_packages.R")
 check_packages(c("shiny", "shinythemes", "ggplot2", "devtools", "twitteR", "base64enc", "httr", "DT", "rmarkdown", "wordcloud2"))
-install_github("PHP-2560/r-package-aes/coffee")
+install_github("PHP-2560/final-project-coffee/coffee")
 library(coffee)
 
 navbarPage(
@@ -49,7 +49,7 @@ navbarPage(
         titlePanel("Word Cloud"),
           sidebarLayout(
             sidebarPanel(
-              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The WordCloud displayed to the right will display the most frequent words corresponding to those specific tweets. This app also allows you to choose how many words you would like shown in the word cloud.'),
+              helpText('You will begin by selecting one of the words listed below. Our app will find the top 500 tweets capturing that specific word. The Word Cloud displayed to the right will display the most frequent words corresponding to those specific tweets. This app also allows you to choose how many words you would like shown in the word cloud.'),
               hr(),
               selectInput("selection", "Choose a Word:", choices = c("coffee","starbucks", "dunkin", "shiru")),
             # Sidebar with a slider and selection inputs
